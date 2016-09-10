@@ -9,8 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-"blog[ id="+blogid+", subject="+subject+
-				",description="+ description+",username"+username+",likes"+likes+"]";
+
  <form:form id="newblog" modelAttribute="newb" method="post" action="addNewBlog">
    <table width="400px" height="150px">
     <tr>
