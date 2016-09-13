@@ -61,16 +61,18 @@
 					<p><h3>@user ${p.username}:</h3>${p.forumreply.myreply}</p>
 					
 				
-					<a href="replyforum">Leave a Comment</a>
+					<a href="replyforum?forumid=${p.forumid}">Leave a Comment</a>
 					<a href="viewreply?forumid=${p.forumid}">view Comments</a>
 					
 					<a href="like?forumid=${p.forumid}"> <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></a>
-					<jsp:include page="myreplypage.jsp"></jsp:include>
+					
 			
 			<div id ="replyclick">
 	<c:if test="${replyclick==true}">
-	
-		<jsp:include page="myreplypage.jsp"></jsp:include>
+	<c:if test="${p.forumid==forumid}">
+		${replyclick}
+		<%@include file="/WEB-INF/view/myreplypage.jsp" %>
+		</c:if>
 	</c:if>
 				</c:forEach>
 			

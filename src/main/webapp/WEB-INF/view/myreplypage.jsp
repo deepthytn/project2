@@ -11,7 +11,7 @@
 <body>
 
 sdffffffffffffffffffffffffffff
-<form:form commandName="commentspage"  method="post" action="saveComments">
+<form:form commandName="replypage"  method="post" action="saveComments">
 				<div class="form-group">
 				
 				

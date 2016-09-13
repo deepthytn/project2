@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import daoservice.ForumMServiceDao;
@@ -71,12 +72,7 @@ public class ForumController {
 	@RequestMapping("forum1")
 	public ModelAndView getAllForum(@ModelAttribute("commentspage") ForumReply f)
 	{
-		List<ForumModel> list= forumservice.getAllForum();
-		for(ForumModel d :list)
-		{
-			System.out.println("dddddddddddddddddd"+d.getSubject());
-			
-		}
+		List<ForumModel> list=getallforum();
 		ModelAndView mv=new ModelAndView("NewForum1");
 		mv.addObject("forum", list);
 		
@@ -84,13 +80,27 @@ public class ForumController {
 	}
 	
 	@RequestMapping("replyforum")
-	public ModelAndView replyforum()
+	public ModelAndView replyforum(@RequestParam("forumid") int id,@ModelAttribute("replypage")ForumReply fr)
 	{
 	System.out.println("+++++++++");
-		
-		ModelAndView addf=new ModelAndView("redirect:/forum1");
-		addf.addObject("replyclick", false);
+	List<ForumModel> list=getallforum();
+		ModelAndView addf=new ModelAndView("NewForum1");
+		addf.addObject("forum", list);
+		addf.addObject("replyclick", true);
+		addf.addObject("forumid", id);
 		return addf;
+	}
+	
+	public List<ForumModel> getallforum()
+	{
+		List<ForumModel> list= forumservice.getAllForum();
+		for(ForumModel d :list)
+		{
+			System.out.println("dddddddddddddddddd"+d.getSubject());
+			
+		}
+		return list;
+		
 	}
 
 }
