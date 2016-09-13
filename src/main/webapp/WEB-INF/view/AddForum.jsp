@@ -7,6 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <sec:authorize access="hasRole('ROLE_USER')">
@@ -38,13 +43,13 @@
     <tr>
      <td><form:label path="subject">subject</form:label>
      </td>
-     <td><form:input path="subject" />
+     <td><form:input class="form-control" path="subject" />
      </td>
     </tr>
     <tr>
      <td><form:label path="description">description</form:label>
      </td>
-     <td><form:input path="description" />
+     <td><form:textarea class="form-control" path="description" />
      </td>
     </tr>
      <tr>

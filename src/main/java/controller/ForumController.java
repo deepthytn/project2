@@ -1,6 +1,7 @@
 package controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import daoservice.ForumMServiceDao;
 
 import model.ForumModel;
+import model.ForumReply;
 
 @Controller
 public class ForumController {
@@ -65,6 +67,30 @@ public class ForumController {
 				return "redirect:/forum";
 			}
 		
+	}
+	@RequestMapping("forum1")
+	public ModelAndView getAllForum(@ModelAttribute("commentspage") ForumReply f)
+	{
+		List<ForumModel> list= forumservice.getAllForum();
+		for(ForumModel d :list)
+		{
+			System.out.println("dddddddddddddddddd"+d.getSubject());
+			
+		}
+		ModelAndView mv=new ModelAndView("NewForum1");
+		mv.addObject("forum", list);
+		
+		return mv;
+	}
+	
+	@RequestMapping("replyforum")
+	public ModelAndView replyforum()
+	{
+	System.out.println("+++++++++");
+		
+		ModelAndView addf=new ModelAndView("redirect:/forum1");
+		addf.addObject("replyclick", false);
+		return addf;
 	}
 
 }

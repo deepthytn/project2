@@ -36,6 +36,7 @@ uploadFile
 
 <a href="myimage">my profile</a>
 <a href="addforum">addforum</a>
+<a href="forum1">addforum</a>
 	</sec:authorize>
 </body>
 </html>
