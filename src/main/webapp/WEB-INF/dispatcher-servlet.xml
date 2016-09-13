@@ -22,12 +22,21 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 <bean id="dc" class="dao.DaoIm"></bean>
        <bean id="ds" class="daoservice.DaoServiceIm"></bean> 
        
+       
+       
         <bean id="forumdao" class="dao.ForumModelImpl"></bean>
        <bean id="forumservice" class="daoservice.ForumMServiceImpl"></bean> 
+       
+       <bean id="frdao" class="dao.ForumReplyDaoImpl2"></bean>
+       <bean id="frserivce" class="daoservice.ForumReplyServiceImpl"></bean> 
+       
+      
+       
        
        <bean id="blogdao" class="dao.BlogDaoImpl"></bean>
        <bean id="blogdc" class="daoservice.BlogDaoServiceImpl"></bean> 
        
+        
        
        
         

@@ -15,9 +15,7 @@ public class ForumMServiceImpl implements ForumMServiceDao{
 		
 		return forumModelDao.getRowById(id);
 	}
-	public void getReplysByUser(String Username){
-		forumModelDao.getReplysByUser(Username);
-	}
+	
 	public int addNewForum(ForumModel f){
 		
 	return	forumModelDao.addNewForum(f);

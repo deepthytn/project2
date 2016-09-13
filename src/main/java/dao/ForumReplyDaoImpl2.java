@@ -13,38 +13,40 @@ import org.springframework.transaction.annotation.Transactional;
 import daoservice.ForumModelDao;
 import model.Forum;
 import model.ForumModel;
+import model.ForumReply;
 
 @Repository
 @Transactional
-public class ForumModelImpl implements ForumModelDao {
+public class ForumReplyDaoImpl2 implements ForumReplyDao1 {
 	
 	@Autowired
 	SessionFactory sf;
 	
-	List<ForumModel> flist;
-	  public ForumModel getRowById(int id){
+	List<ForumReply> flist;
+	
+	  public ForumReply getRowById(int id){
 		   
 		   Session s=sf.openSession();
 		   Transaction trx=s.beginTransaction();
 		   
-		   ForumModel p=(ForumModel)s.load(ForumModel.class, id);
+		   ForumReply p=(ForumReply)s.load(ForumReply.class, id);
 		  trx.commit();
 		  s.close();
 		   return p;
 		   
 	   }
 	
-	public int addNewForum(ForumModel f){
+	public int addForumReply(ForumReply f){
 		
 		Session s=sf.getCurrentSession();
 		s.save(f);
 		return 1;
 	}
-	public List<ForumModel> getAllForum(){
+	public List<ForumReply> getAllForumReply(){
 		
 		 Session session = sf.getCurrentSession();  
-		    Query q =session.createQuery("from ForumModel");
-		    	flist =(List<ForumModel>)q.list();
+		    Query q =session.createQuery("from ForumReply");
+		    	flist =(List<ForumReply>)q.list();
 		    	return flist;
 	}
 }

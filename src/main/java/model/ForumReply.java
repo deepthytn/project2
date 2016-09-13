@@ -8,8 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 @Entity
+@Table(name="forumreply")
 public class ForumReply implements Serializable {
 
 	@Id
@@ -21,7 +27,9 @@ public class ForumReply implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	String username,description;
+	
+	String Usernames;
+	String description;
 	String myreply;
 	int likes,forumid;
 	public int getReplyid() {
@@ -31,10 +39,10 @@ public class ForumReply implements Serializable {
 		this.replyid = replyid;
 	}
 	public String getUsername() {
-		return username;
+		return Usernames;
 	}
 	public void setUsername(String username) {
-		this.username = username;
+		this.Usernames = username;
 	}
 	public String getMyreply() {
 		return myreply;
@@ -61,7 +69,8 @@ public class ForumReply implements Serializable {
 		this.user = user;
 	}
 	@ManyToOne
-	@JoinColumn(name="Username")
+	@JoinColumn(name="username")
+	@JsonIgnore
 	private UserModel user;
 	
 	

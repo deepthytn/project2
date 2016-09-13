@@ -37,8 +37,8 @@
 
 	</sec:authorize>
        
- --------------------------------- Blog--------------------------------------
-  <a href="addnewforum">Add New Blog</a>
+ --------------------------------- Forum--------------------------------------
+  <a href="addnewforum">Add New forum</a>
   
   <div class="container-fluid">
 		<div class="row content">
@@ -51,31 +51,43 @@
 
 				</div>
 				
-				<hr>
+				
 				
 				<c:forEach items="${forum}" var="p">
 				
-					<h3>${p.subject}</div></h3>
-					<p>${p.description}</p>
-					<h3>Comments</h3>
-					<p><h3>@user ${p.username}:</h3>${p.forumreply.myreply}</p>
+				<p ><span style="font-weight:bold">@user ${p.username} posted:</p><br/>
+					<p><span style="font-weight:bold">subject :</span><h2>${p.subject}</h2></p><br/>
+					<p><span style="font-weight:bold">description</span>${p.description}</p><br/>
 					
+					
+					<div>
 				
 					<a href="replyforum?forumid=${p.forumid}">Leave a Comment</a>
 					<a href="viewreply?forumid=${p.forumid}">view Comments</a>
 					
 					<a href="like?forumid=${p.forumid}"> <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></a>
-					
+					<div>
 			
 			<div id ="replyclick">
 	<c:if test="${replyclick==true}">
 	<c:if test="${p.forumid==forumid}">
-		${replyclick}
+	
 		<%@include file="/WEB-INF/view/myreplypage.jsp" %>
 		</c:if>
 	</c:if>
+	<br/><br/>
+	
+	<div id ="viewreply">$
+	<c:if test="${viewreplyclick==true}">
+	<c:if test="${p.forumid==forumid}">
+	<%@include file="/WEB-INF/view/viewallforumrepl.jsp" %>
+	</c:if>	
+		
+	</c:if>
+	<br/><br/>
+	<hr/>
 				</c:forEach>
-			
+			<div class="col-sm-3">
 				
 			</div>
 			

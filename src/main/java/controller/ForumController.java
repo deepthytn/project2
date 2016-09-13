@@ -70,7 +70,7 @@ public class ForumController {
 		
 	}
 	@RequestMapping("forum1")
-	public ModelAndView getAllForum(@ModelAttribute("commentspage") ForumReply f)
+	public ModelAndView getAllForum(@ModelAttribute("replypage") ForumReply f)
 	{
 		List<ForumModel> list=getallforum();
 		ModelAndView mv=new ModelAndView("NewForum1");
@@ -100,6 +100,13 @@ public class ForumController {
 			
 		}
 		return list;
+		
+	}
+	@RequestMapping("saveReply")
+	public String saveReply(@RequestParam("forumid")int id,@ModelAttribute("replypage")ForumReply fr)
+	{
+		
+		return "redirect:/forum1";
 		
 	}
 

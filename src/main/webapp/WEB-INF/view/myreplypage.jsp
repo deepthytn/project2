@@ -10,11 +10,11 @@
 </head>
 <body>
 
-sdffffffffffffffffffffffffffff
-<form:form commandName="replypage"  method="post" action="saveComments">
+<h2>Comments</h2>
+<form:form commandName="replypage"  method="post" action="addreply">
 				<div class="form-group">
 				
-				
+				<form:hidden path="forumid"/>
 					<form:input type="textarea" path="myreply" class="form-control" placeholder="Comments"/>
 				</div>
 				<button type="submit" class="btn btn-success">Submit</button>
