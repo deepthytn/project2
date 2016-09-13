@@ -1,5 +1,7 @@
 package controller;
 
+import java.security.Principal;
+
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -76,7 +78,7 @@ String path = "D:\\Test\\uploads";
 			return model;
 
 		}
-	
+	 
 	
 
 }

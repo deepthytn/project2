@@ -2,6 +2,7 @@ package controller;
 
 import com.niit.shoppingcart.App;
 import java.nio.file.Path;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,5 +99,25 @@ public class HomeController {
 		return model;
 
 	}
+	@RequestMapping("/myprofile1")
+	public ModelAndView profilepage(Principal p)
+	{
+		ModelAndView mv=new ModelAndView("myprofile");
+		String name = p.getName();
+		System.out.println(name);
+		UserModel mypro=null;
+		List<UserModel> nm=dc.getAll();
+		for ( UserModel us : nm) {
+			if(us.getUsername().equals(name))
+			{
+				mypro=us;
+				
+			}
+		}
+		
+		mv.addObject("usermodel", mypro);
+		
+		return mv;
+}
 
 }

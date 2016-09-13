@@ -91,6 +91,7 @@ public class ForumController {
 		return addf;
 	}
 	
+	
 	public List<ForumModel> getallforum()
 	{
 		List<ForumModel> list= forumservice.getAllForum();

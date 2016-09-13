@@ -34,7 +34,7 @@ uploadFile
 			</h2>
 		</c:if>
 
-<a href="myimage">my profile</a>
+<a href="myprofile1">my profile</a>
 <a href="addforum">addforum</a>
 <a href="forum1">addforum</a>
 	</sec:authorize>

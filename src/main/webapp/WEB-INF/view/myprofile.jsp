@@ -7,6 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-user name ${person.getUsername()}
+<table>
+<caption>MY PROFILE</caption>
+<tr>
+<th>userid :</th>
+<td>${usermodel.id}</td>
+</tr>
+<tr>
+<th>username :</th>
+<td>${usermodel.username}</td>
+</tr>
+<tr>
+<th>address:</th>
+<td>${usermodel.address}</td>
+</tr>
+<tr>
+<th>email :</th>
+<td>${usermodel.email}</td>
+</tr>
+
 </body>
 </html>
