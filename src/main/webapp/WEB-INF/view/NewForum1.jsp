@@ -67,7 +67,11 @@
 					<a href="like?forumid=${p.forumid}"> <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></a>
 					<jsp:include page="myreplypage.jsp"></jsp:include>
 			
-			
+			<div id ="replyclick">
+	<c:if test="${replyclick==true}">
+	
+		<jsp:include page="myreplypage.jsp"></jsp:include>
+	</c:if>
 				</c:forEach>
 			
 				
@@ -79,11 +83,7 @@
 			<br>
 			<br>
 
-		<div id ="replyclick">
-	<c:if test="${replyclick==true}">
-	
-		<jsp:include page="myreplypage.jsp"></jsp:include>
-	</c:if>
+		
 		
 	</div>
 	</div>
