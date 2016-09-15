@@ -28,9 +28,7 @@ import model.UserModel;
 @Controller
 public class FileUploadController {
 
-	/**
-	 * Upload single file using Spring Controller
-	 */
+	
 	
 	
 	@RequestMapping("/upload")

@@ -7,13 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+ <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
 </head>
 <body>
 
-<a href="myblog">blog</a>
-uploadFile
-<a href="upload">uploadFile</a>
 
+
+<div class="jumbotron">
 <sec:authorize access="hasRole('ROLE_USER')">
 		<!-- For login user -->
 		<c:url value="/j_spring_security_logout" var="logoutUrl" />
@@ -33,10 +39,89 @@ uploadFile
 					href="javascript:formSubmit()"> Logout</a>
 			</h2>
 		</c:if>
-
+</div>
 <a href="myprofile1">my profile</a>
-<a href="addforum">addforum</a>
-<a href="forum1">addforum</a>
+
+<a href="forum1">forum</a>
+<a href="Chat">Chat</a>
+<a href="myblog">blog</a>
+
+<a href="upload">uploadFile</a>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Collaboration</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="myblog">my blog <span class="sr-only">(current)</span></a></li>
+        <li><a href="forum1">forum</a></li>
+        <li><a href="Chat">Chat</a></li>
+              <li><a href="upload">upload</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="myprofile1">myprofile</a></li>
+            <li><a href="forum1">forum</a></li>
+            <li><a href="myblog">myblog</a></li>
+             <li><a href="Chat">Chat</a></li>
+              <li><a href="upload">upload</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="myprofile1">my profile</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><a href="myprofile1">myprofile</a></li>
+            <li><a href="forum1">forum</a></li>
+            <li><a href="myblog">myblog</a></li>
+             <li><a href="Chat">Chat</a></li>
+              <li><a href="upload">upload</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#mycarousel" data-slide-to="1"></li>
+    <li data-target="#mycarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="resources/images/b3.jpg" alt="...">
+      
+      
+     </div>
+    <div class="item">
+      <img src="resources/images/b2.jpg" alt="...">
+      
+    </div>
+    <div class="item">
+      <img src="resources/images/b1.jpg" alt="...">
+      
+    </div>
 	</sec:authorize>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
