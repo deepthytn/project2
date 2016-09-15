@@ -55,12 +55,23 @@ public class HomeController {
 	@RequestMapping(value={"/addUser"},method=RequestMethod.POST)
 	public ModelAndView adding(@ModelAttribute("p") UserModel p)
 	{
-		
-		
-		dc.addproduct(p);//calls service method
+		ModelAndView mv=new ModelAndView("myhome");
+		System.out.println("nullllllllllllllllllllllllllll324");
+		if(!p.getUsername().isEmpty() && !p.getPassword().isEmpty())
+		{
+			System.out.println("nullllllllllllllllllllllllllll");
+		dc.addproduct(p);
+		}
+		else
+		{
+			mv.addObject("errormsg", true);
+			mv.addObject("message", "some required fields left blank");
+			
+			System.out.println("nullllllllllllllllllllllllllll");
+		}//calls service method
 		
 
-	return new ModelAndView("myhome");
+	return  mv;
 	}
 	/*-------------------admin---------------*/
 	 @RequestMapping(value = "/admin**", method = RequestMethod.GET)

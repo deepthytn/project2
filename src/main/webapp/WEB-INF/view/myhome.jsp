@@ -86,14 +86,14 @@
 	<div class="col-xs-3 col-md-3"> </div>
 	</div>
 	
-                <a class="navbar-brand page-scroll" href="#page-top">My Shop</a>
+                <a class="navbar-brand page-scroll" href="#page-top">My Portal</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="allp">All PRODUCTS</a>
+                       
                     </li>
                     <li>
                         <a class="page-scroll" href="#loginpage">LOGIN</a>
@@ -104,6 +104,13 @@
                     
                 </ul>
             </div>
+            
+            <c:if test="${errormsg==true}">
+            <script type="text/javascript">
+            alert('"${message}"')
+            </script>
+	
+	</c:if>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->

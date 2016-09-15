@@ -4,10 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import java.io.Serializable;
 
-
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -15,10 +18,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class UserModel implements Serializable {
 	@Id
 	int id;
+	@Size(min=2, max=30)
 	String name;
 String address;
+@NotNull @Email
 String email;
 private String userrole;
+@NotNull
 private String username;
 String password;
 
