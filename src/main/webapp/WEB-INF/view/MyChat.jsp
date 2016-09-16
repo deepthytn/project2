@@ -2,6 +2,7 @@
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
+ <%@include file="/WEB-INF/view/header.jsp" %>
 
 <div ng-app="myApp">
 <div ng-controller="ChatCtrl" class="container">

@@ -14,7 +14,7 @@
 
 </head>
 <body>
-
+<%@include file="/WEB-INF/view/header.jsp" %>
 <table class="table table-bordered table-striped">
 <caption style="align:center">MY PROFILE</caption>
 <tr>

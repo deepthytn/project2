@@ -29,10 +29,12 @@ public class BlogController {
 	List<Blog> plist=null;
 	
 	@RequestMapping("/myblog")
-	public String blog()
+	public ModelAndView blog()
 	{
+		ModelAndView mv=new ModelAndView("/hello");
+		mv.addObject("blogclick", true);
 		
-		return "Blog";
+		return mv;
 	}
 	
 	@RequestMapping("/p")

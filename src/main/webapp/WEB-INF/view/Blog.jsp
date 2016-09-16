@@ -53,18 +53,7 @@ body { padding-top:50px; }
   
   
   
-  <form>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        <input type="text" class="form-control" ng-model="searchsubject" placeholder="Search Product Name" >
-       <!--  <button  ng-click="getDataFromServer()">List of products</button> &nbsp; --> 
-       </div>      
-    </div>
-  </form>
-  
-  <div ng-init="getDataFromServer()" >
-  
+ 
       <sec:authorize access="hasRole('ROLE_USER')">
 		<!-- For login user -->
 		<c:url value="/j_spring_security_logout" var="logoutUrl" />
@@ -87,8 +76,24 @@ body { padding-top:50px; }
 
 
 	</sec:authorize>
-       
- --------------------------------- Blog--------------------------------------
+	
+	<div class="jumbotron">
+	<h2 align="center">Blog</h2></div>
+    <hr>
+   <strong>Search by Subject   </strong> 
+  
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" ng-model="searchsubject" placeholder="Search Product Name" >
+       <!--  <button  ng-click="getDataFromServer()">List of products</button> &nbsp; --> 
+       </div>      
+    </div>
+  </form>
+  
+  <div ng-init="getDataFromServer()" >
+  
   <a href="newblogreg">Add New Blog</a>
   <div >
   <ul>
