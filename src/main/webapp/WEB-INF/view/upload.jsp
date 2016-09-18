@@ -7,8 +7,8 @@
 <title>Upload File Request Page</title>
 </head>
 <body>
- <form method="POST" action="uploadFile1" enctype="multipart/form-data">
-		File to upload: <input type="file" name="file">
+ <form  action="./uploadFile1" method="post" >
+		File to upload: <!--  <input type="file" name="file">-->
  
 		Name: <input type="text" name="name">
  

@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
- <%@include file="/WEB-INF/view/header.jsp" %>
-
-<div ng-app="myApp">
-<div ng-controller="ChatCtrl" class="container">
-<form ng-submit="addMessage()" name="messageForm">
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
+    <link href="resources/css/mystyle.css" rel="stylesheet" type="text/css" />
+    <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+  <body ng-app="chatApp">
+    <div ng-controller="ChatCtrl" class="container">
+      <form ng-submit="addMessage()" name="messageForm">
         <input type="text" placeholder="Compose a new message..." ng-model="message" />
         <div class="info">
           <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
@@ -17,11 +18,9 @@
       <p ng-repeat="message in messages | orderBy:'time':true" class="message">
         <time>{{message.time | date:'HH:mm'}}</time>
         <span ng-class="{self: message.self}">{{message.message}}</span>
-        {{message}}
+        {{message.getMessage()}}
       </p>
     </div>
-
-</div>
 
 <script>
 var app = angular.module('myApp', ["chatApp.controllers",
@@ -70,9 +69,9 @@ angular.module("chatApp.services").service("ChatService", function($q, $timeout)
     }, messageIds = [];
     
     service.RECONNECT_TIMEOUT = 30000;
-    service.SOCKET_URL = "/chat";
+    service.SOCKET_URL = "/project2/chat";
     service.CHAT_TOPIC = "/topic/message";
-    service.CHAT_BROKER = "/chat";
+    service.CHAT_BROKER = "/app/chat";
     
     service.receive = function() {
       return listener.promise;
@@ -123,10 +122,11 @@ angular.module("chatApp.services").service("ChatService", function($q, $timeout)
     return service;
   });
 </script>
+
  <script src="resources/lib/sockjs/sockjs.min.js" type="text/javascript"></script>
      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js" type="text/javascript"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" type="text/javascript"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 </div>
 </body>
 </html>

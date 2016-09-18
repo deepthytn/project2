@@ -24,7 +24,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
         <websocket:stomp-endpoint path="/chat">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/topic, /queue"/>
+        <websocket:simple-broker prefix="/topic"/>
     </websocket:message-broker>	
 <bean id="dc" class="dao.DaoIm"></bean>
        <bean id="ds" class="daoservice.DaoServiceIm"></bean> 
@@ -95,7 +95,8 @@ view-factory-creator="viewFactoryCreator" />
 		<property name="order" value="0" />
 	</bean>
 
-<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" > 
-
-</bean>
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <!-- one of the properties available; the maximum file size in bytes -->  
+        <property name="maxUploadSize" value="5242880">  
+    </property> </bean>
 </beans>

@@ -31,8 +31,8 @@ public class BlogController {
 	@RequestMapping("/myblog")
 	public ModelAndView blog()
 	{
-		ModelAndView mv=new ModelAndView("/hello");
-		mv.addObject("blogclick", true);
+		ModelAndView mv=new ModelAndView("/Blog");
+		//mv.addObject("blogclick", true);
 		
 		return mv;
 	}

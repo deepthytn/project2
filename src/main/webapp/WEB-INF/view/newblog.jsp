@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%@include file="/WEB-INF/view/header.jsp" %>
  <form:form id="newblog" modelAttribute="newb" method="post" action="addNewBlog">
    <table width="400px" height="150px">
     <tr>

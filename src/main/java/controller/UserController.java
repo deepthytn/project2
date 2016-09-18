@@ -34,7 +34,10 @@ public class UserController {
 		return mc  ;
 	}
 	
-	@RequestMapping("/myimage")
+	
+	
+	
+	/*@RequestMapping("/myimage")
 	public ModelAndView myprof(@ModelAttribute("product") UserModel user)
 	
 	{
@@ -43,9 +46,9 @@ public class UserController {
 		
 		
 		return mc  ;
-	}
+	}*/
 	
-	@RequestMapping(value = "/addimage", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/addimage", method = RequestMethod.POST)
 	public @ResponseBody String addProduct(@RequestParam("file") MultipartFile file) {
 		
 System.out.println("ddddddddddddddddddddddddd");
@@ -58,7 +61,7 @@ String path = "D:\\Test\\uploads";
 		FileUtil.upload(path, file,"id.jpg");
 		
 		return "redirect:/myprofile";
-	}
+	}*/
 	 @RequestMapping(value = "/403", method = RequestMethod.GET)
 		public ModelAndView accesssDenied() {
 

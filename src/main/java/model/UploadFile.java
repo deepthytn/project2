@@ -2,12 +2,15 @@ package model;
 
 import java.io.Serializable;
 
+import javax.persistence.Transient;
+
 import org.springframework.web.multipart.MultipartFile;
 
 
 public class UploadFile implements Serializable{
-	private String filename;
 	
+	private String filename;
+	@Transient
 	private MultipartFile image;
 
 	public String getFilename() {

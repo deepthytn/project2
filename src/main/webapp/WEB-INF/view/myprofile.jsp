@@ -15,8 +15,12 @@
 </head>
 <body>
 <%@include file="/WEB-INF/view/header.jsp" %>
+
+
+<img alt="sfsdf" src="${path}">
 <table class="table table-bordered table-striped">
 <caption style="align:center">MY PROFILE</caption>
+
 <tr>
 <th>userid :</th>
 <td>${usermodel.id}</td>

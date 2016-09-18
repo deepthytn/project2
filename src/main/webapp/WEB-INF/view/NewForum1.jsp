@@ -17,7 +17,7 @@
 <%@include file="/WEB-INF/view/header.jsp" %>
        
  --------------------------------- Forum--------------------------------------
-  <a href="addnewforum">Add New forum</a>
+ 
   
   <div class="container-fluid">
 		<div class="row content">
@@ -26,7 +26,7 @@
 			<div class="col-sm-9">
 				<div>
 
-					<a href="addforum">Add New Forum</a>
+					 <a href="addnewforum">Add New forum</a>
 
 				</div>
 				
