@@ -6,6 +6,7 @@
     <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   </head>
   <body ng-app="chatApp">
+  <%@include file="/WEB-INF/view/header.jsp" %>
     <div ng-controller="ChatCtrl" class="container">
       <form ng-submit="addMessage()" name="messageForm">
         <input type="text" placeholder="Compose a new message..." ng-model="message" />
@@ -82,7 +83,7 @@ angular.module("chatApp.services").service("ChatService", function($q, $timeout)
       socket.stomp.send(service.CHAT_BROKER, {
         priority: 9
       }, JSON.stringify({
-        message: message,
+        message: '${pageContext.request.userPrincipal.name}: '+message,
         id: id
       }));
       messageIds.push(id);
